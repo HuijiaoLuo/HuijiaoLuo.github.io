@@ -655,11 +655,11 @@ c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></spa
 NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
     var gitalk = new Gitalk({
-      clientID    : 'Ov23liotnzOrCwuuQBdt',
-      clientSecret: '2f9c75cff17a310837cde463f61819b685389fdf',
-      repo        : 'BlogComments',
-      owner       : 'HuijiaoLuo',
-      admin       : ['HuijiaoLuo'],
+      clientID    : process.env.GITTALK_CLIENT_ID,
+      clientSecret: process.env.GITTALK_CLIENT_SECRET,
+      repo        : process.env.GITTALK_REPO,
+      owner       : process.env.GITTALK_OWNER,
+      admin       : process.env.GITTALK_ADMIN.split(','),
       id          : '442acae78c2d815c8db5b8568a0f994e',
         language: '',
       distractionFreeMode: true
